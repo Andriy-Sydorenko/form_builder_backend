@@ -1,0 +1,56 @@
+[project]
+name = "form-builder-backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "alembic>=1.16.4",
+    "asyncpg>=0.30.0",
+    "fastapi[standard]>=0.116.1",
+    "psycopg2-binary>=2.9.10",
+    "ruff>=0.12.4",
+    "sqlalchemy>=2.0.41",
+]
+
+[tool.ruff]
+line-length = 120
+exclude = [
+    "**/__init__.py",
+    "error_formatter.py",
+    "alembic",
+    "env/**",
+    "venv/**",
+]
+target-version = "py312"
+
+
+[tool.ruff.format]
+quote-style = "double"
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D100", "D101", "D102", "D103", "D107",
+    "ISC001",
+    "ANN",
+    "E702", "E231", "E241", "E251", "E202",
+    "D106",
+    "TRY201",
+    "TD002",
+    "TD003",
+    "FIX002",
+    "TRY003",
+    "EM102",
+    "N813",
+    "PGH004",
+    "D203",
+    "D213",
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+lines-after-imports = 2
